@@ -1,0 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#bg-login {
+  background-image: url(../assets/img/login.jpg);
+  background-size: cover;
+  color: white;
+}
+
+#bg-index {
+  background-image: url(../assets/img/beranda.png);
+  background-size: cover;
+}
