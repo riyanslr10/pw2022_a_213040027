@@ -25,6 +25,17 @@ if (isset($_POST['submit'])) {
       $_SESSION['username'] = $_POST['username'];
       $_SESSION['hash'] = hash('sha256', $row['id'], false);
 
+      //cek role admin
+      if ($row['role']=="admin") {
+        $_SESSION['id_admin'] = $row['id'];
+        $_SESSION['role'] = "admin";
+        header("location:admin.php");
+    } else if ($row['role']=="user") {
+        $_SESSION['id_user'] = $row['id'];
+        $_SESSION['role'] = "user";
+        header("location:user.php");
+    }
+
       if (isset($_POST['remember'])) {
         setcookie('username', $row['username'], time() + 60 * 60 * 24);
         $hash = hash('sha256', $row['id']);
@@ -32,7 +43,6 @@ if (isset($_POST['submit'])) {
       }
 
       if (hash('sha256', $row['id']) == $_SESSION['hash']) {
-        header("Location: admin.php");
         die;
       }
       header("Location: ../index.php");
@@ -60,7 +70,7 @@ if (isset($_POST['submit'])) {
 <body>
 <nav class="navbar navbar-expand-lg bg-dark">
       <div class="container">
-      <a class="navbar-brand " href="../index.php">Slayer CONSOLE</a>
+      <button style="background-color: red; border-color: red; border-radius: 5px; padding-left: 10px;"><a class="navbar-brand " href="../index.php" style="color: white;">Back Home</a></button>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         
       </button>

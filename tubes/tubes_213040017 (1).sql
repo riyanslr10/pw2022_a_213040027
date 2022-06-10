@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 10, 2022 at 12:56 PM
+-- Generation Time: Jun 10, 2022 at 08:55 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -93,15 +93,17 @@ CREATE TABLE `produk_stick` (
 CREATE TABLE `user` (
   `id` int(11) NOT NULL,
   `username` varchar(64) NOT NULL,
-  `password` varchar(256) NOT NULL
+  `password` varchar(256) NOT NULL,
+  `role` enum('admin','user','','') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id`, `username`, `password`) VALUES
-(4, 'admin', '$2y$10$64X3m/XFNbQ8h2u8gruhZe1yd81rKU1vJBa7LDN1DOBYxUKjOpA5C');
+INSERT INTO `user` (`id`, `username`, `password`, `role`) VALUES
+(4, 'admin', '$2y$10$64X3m/XFNbQ8h2u8gruhZe1yd81rKU1vJBa7LDN1DOBYxUKjOpA5C', 'admin'),
+(5, 'alif', '$2y$10$ZieXmRhx9exOnBp742rBoO1XAb8iMUV/12XWafbkfKMlpZN7Y/HsK', 'user');
 
 --
 -- Indexes for dumped tables
@@ -159,7 +161,7 @@ ALTER TABLE `produk_stick`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables
