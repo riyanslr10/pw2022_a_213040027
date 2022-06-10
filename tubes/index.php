@@ -115,14 +115,11 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ml-auto">
+          <a class="nav-item nav-link" href="#Home"><h4>Home</h4></a>
           <a class="nav-item nav-link" href="#product"><h4>Product</h4></a>
           <a class="nav-item nav-link" href="#address"><h4>Address</h4></a>
           <a class="nav-item nav-link" href="#contact"><h4>Contact</h4></a>
           <a class="nav-item nav-link" href="php/login.php"><h4>Login</h4></a>
-          <form class="form-inline" action="" method="GET" class="add">
-            <input class="form-control mr-sm-2" type="text" name="keyword" placeholder="Search" aria-label="Search" id="keyword">
-            <button class="btn btn-outline-primary my-2 my-sm-0" type="submit" name="cari" id="tombol-cari">Search</button>
-          </form>
         </div>
       </div>
       </div>
