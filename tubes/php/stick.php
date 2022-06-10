@@ -90,10 +90,6 @@ if (isset($_GET['cari'])) {
       </div>
     </nav>
     <section class="tambah">
-    <div class="add mt-3" style="text-align: center;">
-        <button class="btn btn-primary"><a style="color: white;" href="tambah.php">Add Data</a></button>
-        
-    </div>
     <br>
     <form action="" method="GET" class="add">
         <input type="text" class="my-2 my-sm-0 pl-5 pr-5 pt-1 pb-1" name="keyword" autofocus placeholder="Enter search..." id="keyword">
@@ -104,7 +100,6 @@ if (isset($_GET['cari'])) {
     <table border="1" cellpadding="13" cellspacing="0">
         <tr class="color1">
             <th>No</th>
-            <th>Option</th>
             <th>Img</th>
             <th>Name stick</th>
             <th>description stick</th>
@@ -120,10 +115,6 @@ if (isset($_GET['cari'])) {
         <?php foreach($stick as $s) : ?>
             <tr>
                 <td><?= $i; ?></td>
-                <td>
-                    <a href="ubah.php?id=<?= $s['id-stik'] ?>"><button class="color2">Edit</button></a>
-                    <a href="hapus.php?id=<?= $s['id_stik'] ?>" onclick="return confirm('Hapus Data??')"><button class="color3">Delete</button></a>
-                </td>
                 <td><img style="width: 500px;" src ='../assets/img/<?= $s['img']; ?>'></td>
                 <td><?= $s['nama_stik']; ?></td>
                 <td><?= $s['deskripsi_stik']; ?></td>

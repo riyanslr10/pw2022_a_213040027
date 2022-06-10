@@ -10,7 +10,6 @@ $produk = query($query);
  <table border="1" cellpadding="13" cellspacing="0">
         <tr class="color1">
             <th>No</th>
-            <th>Option</th>
             <th>Image</th>
             <th>Name product</th>
             <th>description product</th>
@@ -26,10 +25,6 @@ $produk = query($query);
         <?php foreach($produk as $p) : ?>
             <tr>
                 <td><?= $i; ?></td>
-                <td>
-                    <a href="ubah.php?id=<?= $p['id_stik'] ?>"><button class="color2">Edit</button></a>
-                    <a href="hapus.php?id=<?= $p['id_stik'] ?>" onclick="return confirm('Hapus Data??')"><button class="color3">Delete</button></a>
-                </td>
                 <td><img style="width: 500px;" src ='../assets/img/<?= $p['img']; ?>'></td>
                 <td><?= $p['nama_stik']; ?></td>
                 <td><?= $p['deskripsi_stik']; ?></td>
